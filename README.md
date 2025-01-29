@@ -18,7 +18,12 @@ Research on Parkinson's disease has shown that the brain undergoes significant c
 
 Parkinson's symptoms may include the following:
 - <b>Tremor</b>: A tremble shaking usually begins in the hands or fingers. Additionally, the tremor can begin in the foot or jaw.
-- <b>Slowed movement (Bradykinesia) </b>: 
+- <b>Slowed movement (Bradykinesia)</b>: Parkinson's disease can slow your movement, making simple tasks significantly more difficult.
+- <b>Rigid Muscles</b>: Muscles may feel tense and painful, and arm movements may be short and jerky.
+- <b>Poor Posture and Balance</b>: Posture may begin to sink, and may have balance problems.
+- <b>Loss of automatic movements</b>: Difficulty performing movements that are traditionally done automatically, such as blinking, smiling, etc...
+- <b>Writing Changes</b>: Difficulty writing, and the writing may appear cramped and small.
+- <b>Nonmotor symptoms</b>: These symptoms could include depression, anxiety, sleep problems, difficulty smelling, and problems with thinking and memory.
 
 ## Resources
 
