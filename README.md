@@ -16,7 +16,9 @@ Research on Parkinson's disease has shown that the brain undergoes significant c
 
 ## Symptoms
 
-[insert]
+Parkinson's symptoms may include the following:
+- <b>Tremor</b>: A tremble shaking usually begins in the hands or fingers. Additionally, the tremor can begin in the foot or jaw.
+- <b>Slowed movement (Bradykinesia) </b>: 
 
 ## Resources
 
