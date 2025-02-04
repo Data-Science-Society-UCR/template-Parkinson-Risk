@@ -24,6 +24,7 @@ Parkinson's symptoms may include the following:
 - <b>Loss of automatic movements</b>: Difficulty performing movements that are traditionally done automatically, such as blinking, smiling, etc...
 - <b>Writing Changes</b>: Difficulty writing, and the writing may appear cramped and small.
 - <b>Nonmotor symptoms</b>: These symptoms could include depression, anxiety, sleep problems, difficulty smelling, and problems with thinking and memory.
+- <b>Voice changes</b>: Parkinson's disease can affect one voice, including a quieter voice, hoarseness, and slurred speech.
 
 ## Resources
 
