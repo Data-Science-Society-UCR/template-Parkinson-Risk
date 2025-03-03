@@ -29,3 +29,24 @@ Parkinson's symptoms may include the following:
 ## Resources
 
 <a href="https://www.mayoclinic.org/diseases-conditions/parkinsons-disease/symptoms-causes/syc-20376055">Mayo Clinic</a>, <a href="https://med.stanford.edu/parkinsons/introduction-PD/history.html#:~:text=First%20described%20in%201817%20by,of%20cells%20that%20produce%20dopamine.">Stanford Medicine</a>
+
+## Understanding the Data
+
+For this project, you will use the `parkinsons.data` dataset (Max A. Little, Patrick E. McSharry, Eric J. Hunter, Lorraine O. Ramig). It is important to understand the variables and the dataset.
+
+#### Matrix column entries (attributes):
+- name - ASCII subject name and recording number
+- MDVP:Fo(Hz) - Average vocal fundamental frequency
+- MDVP:Fhi(Hz) - Maximum vocal fundamental frequency
+- MDVP:Flo(Hz) - Minimum vocal fundamental frequency
+- MDVP:Jitter(%), MDVP:Jitter(Abs), MDVP:RAP, MDVP:PPQ, Jitter:DDP - Several measures of variation in fundamental frequency
+- MDVP:Shimmer,MDVP:Shimmer(dB),Shimmer:APQ3,Shimmer:APQ5,MDVP:APQ,Shimmer:DDA - Several measures of variation in amplitude
+- NHR, HNR - Two measures of the ratio of noise to tonal components in the voice
+- status - The health status of the subject (one) - Parkinson's, (zero) - healthy
+- RPDE, D2 - Two nonlinear dynamical complexity measures
+- DFA - Signal fractal scaling exponent
+- spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation
+
+### Libraries / Dependencies
+
+For this project, we will use the `pandas`, `numpy`, and `matplotlib` (potentially `seaborn`) libraries. If you haven't already, please install these libraries using pip/pip3 install.
