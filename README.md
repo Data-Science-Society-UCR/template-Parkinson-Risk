@@ -1,5 +1,14 @@
 # template-Parkinson-Risk-Assessment
-#### Python
+```diff
+# Python
++ testv2
+
+```
+#### Tags: Python, NumPy, Pandas, Matplotlib
+
+## Project Overview
+
+This project's end goal is to assess Parkinson's disease risk using a simple machine learning mode, training on vocal biomarkers. We will analyze the dataset (`parkinsons.data`) to identify and train patterns that distinguish characteristics in individuals with Parkinson's disease from healthy individuals. 
 
 ## What is Parkinsons disease?
 
@@ -30,7 +39,9 @@ Parkinson's symptoms may include the following:
 
 <a href="https://www.mayoclinic.org/diseases-conditions/parkinsons-disease/symptoms-causes/syc-20376055">Mayo Clinic</a>, <a href="https://med.stanford.edu/parkinsons/introduction-PD/history.html#:~:text=First%20described%20in%201817%20by,of%20cells%20that%20produce%20dopamine.">Stanford Medicine</a>
 
-## Understanding the Data
+## Starting the project
+
+### Understanding the Data
 
 For this project, you will use the `parkinsons.data` dataset (Max A. Little, Patrick E. McSharry, Eric J. Hunter, Lorraine O. Ramig). It is important to understand the variables and the dataset.
 
@@ -50,3 +61,6 @@ For this project, you will use the `parkinsons.data` dataset (Max A. Little, Pat
 ### Libraries / Dependencies
 
 For this project, we will use the `pandas`, `numpy`, and `matplotlib` (potentially `seaborn`) libraries. If you haven't already, please install these libraries using pip/pip3 install.
+
+
+
