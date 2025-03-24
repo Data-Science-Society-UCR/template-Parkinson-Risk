@@ -1,10 +1,9 @@
 # template-Parkinson-Risk-Assessment
-```diff
-# Python
-+ testv2
 
-```
-#### Tags: Python, NumPy, Pandas, Matplotlib
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
+![NumPy](https://img.shields.io/badge/NumPy-1.21%2B-013243?style=for-the-badge&logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-%23ff69b4?style=for-the-badge)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas)
 
 ## Project Overview
 
