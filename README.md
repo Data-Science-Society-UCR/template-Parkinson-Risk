@@ -61,5 +61,6 @@ For this project, you will use the `parkinsons.data` dataset (Max A. Little, Pat
 
 For this project, we will use the `pandas`, `numpy`, and `matplotlib` (potentially `seaborn`) libraries. If you haven't already, please install these libraries using pip/pip3 install.
 
+### Exploratory Data Analysis (EDA)
 
-
+> continue
