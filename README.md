@@ -85,7 +85,7 @@ The first look at your data. During this EDA process, you are trying to understa
 A Support Vector Machine (SVM) is a supervised machine learning algorithm that classifies data by identifying the optimal hyperplane that maximizes the margin between different classes in an N-dimensional space. For our Machine Learning model, we will be using an SVM. If you are interested in reading more about SVM's you can <a href="https://www.ibm.com/think/topics/support-vector-machine#:~:text=A%20support%20vector%20machine%20(SVM,the%201990s%20by%20Vladimir%20N.">here</a>.
 
 1. The first step is to drop any rows with missing values. To do this we can use the `dropna()` function calling on the `df` variable. However, as we previously saw in the EDA, there are no missing values (It is good practice to drop null values though).
-2. In The next step, we want to extract features and the target variable.
+3. In The next step, we want to extract features and the target variable.
     * In regards to extracting features, we want to **set a new variable** (`X`, or a name of your choice) to a new data frame **separate from the original dataset**.
        * We want to drop specific columns that are either irrelevant or can cause data leakage. As a group, think of what these columns are, and talk to your PD with your justification.
            * **Hint 1:** This column does not provide any predictive value for detecting Parkinson's disease.
@@ -96,5 +96,6 @@ A Support Vector Machine (SVM) is a supervised machine learning algorithm that c
    * We will be using the `train_test_split()` function from `sklearn.model_selection`, that randomly splits `X` and `y` into training and testing sets.
        * `X` (features): Input for data prediction.
        * `y` (labels): target variable.
-   * During this process it is important that features (`X`) and labels (`y`) remain properly aligned after splitting.
-
+   * During this process features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. Please refer to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">documentation</a> to figure out how to do this.
+5. The next step is to import and set the scalar, this ensures that all numerical features have a mean of 0 and an sd of 1. Additionally, it prevents some of the features from dominating others, which is extremely important for SVM, given it relies on optimal lines and hyperplanes. Please refer to the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a> to figure out how to do this.
+6. > Continue on Fitting model and SVM
