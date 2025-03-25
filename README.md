@@ -78,24 +78,31 @@ The first look at your data. During this EDA process, you are trying to understa
 5. Using the seaborn library create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code.
 6. Based off all of these functions, what sort of information and conclusions can you draw from the EDA?
 
-> Insert your graphs and summaries here & comment out the above instructions.
+> [!IMPORTANT]
+> When completed, Insert your graphs and summaries here & comment out the above instructions.
 
 ### 5. Support Vector Machine (SVM)
 
 A Support Vector Machine (SVM) is a supervised machine learning algorithm that classifies data by identifying the optimal hyperplane that maximizes the margin between different classes in an N-dimensional space. For our Machine Learning model, we will be using an SVM. If you are interested in reading more about SVM's you can <a href="https://www.ibm.com/think/topics/support-vector-machine#:~:text=A%20support%20vector%20machine%20(SVM,the%201990s%20by%20Vladimir%20N.">here</a>.
 
 1. The first step is to drop any rows with missing values. To do this we can use the `dropna()` function calling on the `df` variable. However, as we previously saw in the EDA, there are no missing values (It is good practice to drop null values though).
-3. In The next step, we want to extract features and the target variable.
-    * In regards to extracting features, we want to **set a new variable** (`X`, or a name of your choice) to a new data frame **separate from the original dataset**.
-       * We want to drop specific columns that are either irrelevant or can cause data leakage. As a group, think of what these columns are, and talk to your PD with your justification.
-           * **Hint 1:** This column does not provide any predictive value for detecting Parkinson's disease.
-           * **Hint 2:** This column would lead to data leakage because the model is not learning independently of said column.
-    * To drop columns, you can use the `drop()` function, and pass in a parameter with the column names. Please refer to <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html">documentation</a> to figure out how to do this.
-    * In regards to the target variable (`y`, or a name of your choice), what is our end goal in the model? What are we trying to predict? And what column reflects that in the dataset?
-4. The next step is to split the data into train and test sets. We will be using the 80/20 rule (80% train, and 20% test)
+2. In The next step, we want to extract features and the target variable.
+   * In regards to extracting features, we want to **set a new variable** (`X`, or a name of your choice) to a new data frame **separate from the original dataset**.
+      * We want to drop specific columns that are either irrelevant or can cause data leakage. As a group, think of what these columns are, and talk to your PD with your justification.
+         * **Hint 1:** This column does not provide any predictive value for detecting Parkinson's disease.
+         * **Hint 2:** This column would lead to data leakage because the model is not learning independently of said column.
+      * To drop columns, you can use the `drop()` function, and pass in a parameter with the column names. Please refer to <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html">documentation</a> to figure out how to do this.
+   * In regards to the target variable (`y`, or a name of your choice), what is our end goal in the model? What are we trying to predict? And what column reflects that in the dataset?
+
+> [!IMPORTANT]
+> When completed, Insert a code block including the 1st and 2nd step code. Above the code block add a header "Dropping rows with missing values & Extract features and target variables" & comment out the above instructions. 
+
+3. The next step is to split the data into train and test sets. We will be using the 80/20 rule (80% train, and 20% test)
    * We will be using the `train_test_split()` function from `sklearn.model_selection`, that randomly splits `X` and `y` into training and testing sets.
        * `X` (features): Input for data prediction.
        * `y` (labels): target variable.
    * During this process features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. Please refer to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">documentation</a> to figure out how to do this.
-5. The next step is to import and set the scalar, this ensures that all numerical features have a mean of 0 and an sd of 1. Additionally, it prevents some of the features from dominating others, which is extremely important for SVM, given it relies on optimal lines and hyperplanes. Please refer to the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a> to figure out how to do this.
-6. > Continue on Fitting model and SVM
+4. The next step is to import and set the scalar, this ensures that all numerical features have a mean of 0 and an sd of 1. Additionally, it prevents some of the features from dominating others, which is extremely important for SVM, given it relies on optimal lines and hyperplanes. Please refer to the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a> to figure out how to do this.
+5.
+
+> Continue on the Fitting model and SVM
