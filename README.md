@@ -67,8 +67,14 @@ For this project, we will use the `pandas`, `numpy`, `matplotlib`, and `seaborn`
 The first look at your data. During this EDA process, you are trying to understand the data's characteristics, identify patterns, and uncover potential insights by examining its structure, relationships, and anomalies.
 
 1. The first step, will be to import all the libraries previously mentioned.
-2. We want to read the dataset using the `read_csv` function from the `pandas` library. The dataframe variable is generally `df`, which is what you will be using to call the functions below.
-3. Next we want to use the following functions for EDA:
+     * Additionally, we want to import any submodules that we will need for the model.
+```
+from sklearn.model_selection import train_test_split # Divides the dataset into training and test sets
+from sklearn.preprocessing import StandardScaler # Normalizes numerical features that no variables dominate the others.
+from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
+```
+3. We want to read the dataset using the `read_csv` function from the `pandas` library. The dataframe variable is generally `df`, which is what you will be using to call the functions below.
+4. Next we want to use the following functions for EDA:
     * `info()` provides a quick summary of the info about the data frame.
     * `head()` shows the first few rows of the dataset.
     * `describe()` provides high-level summaries of all the columns in the dataset. Including count, mean, std, min, max, and 25%, 50%, and 75% percentiles of the values.
@@ -102,7 +108,15 @@ A Support Vector Machine (SVM) is a supervised machine learning algorithm that c
        * `X` (features): Input for data prediction.
        * `y` (labels): target variable.
    * During this process features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. Please refer to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">documentation</a> to figure out how to do this.
-4. The next step is to import and set the scalar, this ensures that all numerical features have a mean of 0 and an sd of 1. Additionally, it prevents some of the features from dominating others, which is extremely important for SVM, given it relies on optimal lines and hyperplanes. Please refer to the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a> to figure out how to do this.
-5.
-
-> Continue on the Fitting model and SVM
+4. The next step is to import and create a scalar object, this ensures that all numerical features have a mean of 0 and an sd of 1. Additionally, it prevents some of the features from dominating others, which is extremely important for SVM, given it relies on optimal lines and hyperplanes. Please refer to the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a> to figure out how to do this.
+5. The next step is to fit and transform the training data. Specifically look at the `fit_transform()` and `transform()` functions in the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a>. We want to save the two outputs from the functions into new variables, `X_scaled_train` and `X_scaled_test` (or a name of your choice).
+6. We will use a support function from the `sklearn.svm` submodule to initialize the SVM model. Additionally, we will be using a `linear` kernel, however, feel free to explore with other kernels.
+   * We can fulfill this step by:
+```
+m = SVC(kernal = 'linear')
+```
+7. Now that we have a model, we can train the model using the following code:
+```
+m.fit(X_scaled_train, y_train)
+```
+8. Lastly, we are able to make predictions using the `predict()` function that we can call on the model and pass in the `X_scaled_test` as a parameter.
