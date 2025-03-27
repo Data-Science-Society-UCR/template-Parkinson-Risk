@@ -67,11 +67,10 @@ For this project, we will use the `pandas`, `numpy`, `matplotlib`, and `seaborn`
 The first look at your data. During this EDA process, you are trying to understand the data's characteristics, identify patterns, and uncover potential insights by examining its structure, relationships, and anomalies.
 
 1. The first step, will be to import all the libraries previously mentioned.
-     * Additionally, we want to import any submodules that we will need for the model.
 ```
-from sklearn.model_selection import train_test_split # Divides the dataset into training and test sets
-from sklearn.preprocessing import StandardScaler # Normalizes numerical features that no variables dominate the others.
-from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 ```
 3. We want to read the dataset using the `read_csv` function from the `pandas` library. The dataframe variable is generally `df`, which is what you will be using to call the functions below.
 4. Next we want to use the following functions for EDA:
@@ -80,43 +79,73 @@ from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
     * `describe()` provides high-level summaries of all the columns in the dataset. Including count, mean, std, min, max, and 25%, 50%, and 75% percentiles of the values.
     * `hist()` creates histograms for each column of the dataset. You can play around with the figure size, by passing `figsize=(x,y)` as a parameter.
     * `isnull().sum()` provides a summary of the number of "missing values" for each of the columns. However, there is a caveat, you must look at the columns, and verify that a null value is NOT logical, thus it IS a missing value. There are multiple ways to address null values, which will be explored later.
-     * `corr()` provides a data frame summary of the computed pairwise correlation of columns in the dataset. However, this can be intimidating and also hard to understand. Thus we can also visualize in a heatmap using the `seaborn` library.
-5. Using the seaborn library create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code.
-6. Based off all of these functions, what sort of information and conclusions can you draw from the EDA?
+    * `df.duplicated().sum()` provides a summary of, if any duplicate rows. This is important because duplicates can skew data and affect model accuracy.
+    * `corr()` provides a data frame summary of the computed pairwise correlation of columns in the dataset. However, this can be intimidating and also hard to understand. Thus we can also visualize in a heatmap using the `seaborn` library.
+5. Using the seaborn library create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code using `sns.heatmap()` function.
 
 > [!IMPORTANT]
-> When completed, Insert your graphs and summaries here & comment out the above instructions.
+> When completed, Insert your findings, graphs, and observations here, then comment out the instructions above.
 
 ### 5. Support Vector Machine (SVM)
 
-A Support Vector Machine (SVM) is a supervised machine learning algorithm that classifies data by identifying the optimal hyperplane that maximizes the margin between different classes in an N-dimensional space. For our Machine Learning model, we will be using an SVM. If you are interested in reading more about SVM's you can <a href="https://www.ibm.com/think/topics/support-vector-machine#:~:text=A%20support%20vector%20machine%20(SVM,the%201990s%20by%20Vladimir%20N.">here</a>.
+A Support Vector Machine (SVM) is a supervised machine learning algorithm that classifies data by identifying the optimal hyperplane that maximizes the margin between different classes in an N-dimensional space. For the Machine Learning model, use an SVM. To explore more about SVM and its applications, check out this <a href="https://www.ibm.com/think/topics/support-vector-machine#:~:text=A%20support%20vector%20machine%20(SVM,the%201990s%20by%20Vladimir%20N.">resource</a>.
 
-1. The first step is to drop any rows with missing values. To do this we can use the `dropna()` function calling on the `df` variable. However, as we previously saw in the EDA, there are no missing values (It is good practice to drop null values though).
-2. In The next step, we want to extract features and the target variable.
-   * In regards to extracting features, we want to **set a new variable** (`X`, or a name of your choice) to a new data frame **separate from the original dataset**.
-      * We want to drop specific columns that are either irrelevant or can cause data leakage. As a group, think of what these columns are, and talk to your PD with your justification.
-         * **Hint 1:** This column does not provide any predictive value for detecting Parkinson's disease.
-         * **Hint 2:** This column would lead to data leakage because the model is not learning independently of said column.
-      * To drop columns, you can use the `drop()` function, and pass in a parameter with the column names. Please refer to <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html">documentation</a> to figure out how to do this.
+Before getting started, import the necessary libraries for splitting data, normalizing features, and training a Support Vector Machine (SVM) model."
+```
+from sklearn.model_selection import train_test_split # Divides the dataset into training and test sets
+from sklearn.preprocessing import StandardScaler # Standardizes numerical features to have a mean of 0 and an SD of 1.
+from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
+```
+1. The first step is to drop any rows with missing values. To do this we can use the `dropna()` function calling on the `df` variable that was created in the EDA. However, as we previously saw in the EDA, there are no missing values (It is good practice to drop null values though).
+
+2. The next step is to extract features and target variables.
+   * Create a new data frame containing only the features relevant to predicting Parkinson’s. How can you ensure it excludes unnecessary columns?
+      * We want to drop specific columns that are either irrelevant or can cause data leakage. Think about which features are useful for prediction. Are there columns that provide no relevant information or could unintentionally give away the outcome? Discuss as a group and justify your choices.
+         * **Hint 1:** One column may not contribute to meaningful predictions.
+         * **Hint 2:** Another column could unintentionally reveal the correct answer, making the model less reliable (data leakage).
+      * Look up the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html">drop()</a> function in pandas documentation. How can you use it to remove multiple columns at once?
    * In regards to the target variable (`y`, or a name of your choice), what is our end goal in the model? What are we trying to predict? And what column reflects that in the dataset?
 
-> [!IMPORTANT]
-> When completed, Insert a code block including the 1st and 2nd step code. Above the code block add a header "Dropping rows with missing values & Extract features and target variables" & comment out the above instructions. 
+Once you've identified the necessary features, write the code to drop irrelevant columns and define `X` and `y`. Before moving forward, check with your PD to confirm your choices.
 
-3. The next step is to split the data into train and test sets. We will be using the 80/20 rule (80% train, and 20% test)
-   * We will be using the `train_test_split()` function from `sklearn.model_selection`, that randomly splits `X` and `y` into training and testing sets.
+> [!IMPORTANT]
+> When completed, Insert a code block that combines the 1st and 2nd step code. Above the code block add a header "Dropping rows with missing values & Extract features and target variables", then comment out the instructions above.
+
+3. To evaluate how well our model generalizes to unseen data, we need to split the dataset into training and testing sets, following the 80/20 rule. Meaning: 80% of the data will be used for training, and 20% for testing.
+   * Use the train_test_split() function from sklearn.model_selection to randomly divide `X` (features) and `y` (labels).
+   * The `train_test_split()` function from `sklearn.model_selection` randomly splits `X` and `y` into training and testing sets. The parameters are in the following order:
        * `X` (features): Input for data prediction.
        * `y` (labels): target variable.
-   * During this process features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. Please refer to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">documentation</a> to figure out how to do this.
-4. The next step is to import and create a scalar object, this ensures that all numerical features have a mean of 0 and an sd of 1. Additionally, it prevents some of the features from dominating others, which is extremely important for SVM, given it relies on optimal lines and hyperplanes. Please refer to the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a> to figure out how to do this.
-5. The next step is to fit and transform the training data. Specifically look at the `fit_transform()` and `transform()` functions in the following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a>. We want to save the two outputs from the functions into new variables, `X_scaled_train` and `X_scaled_test` (or a name of your choice).
-6. We will use a support function from the `sklearn.svm` submodule to initialize the SVM model. Additionally, we will be using a `linear` kernel, however, feel free to explore with other kernels.
-   * We can fulfill this step by:
+       * `test_size =`: the proportion of the dataset that should be allocated to the test set (e.g. `0.3` for 30%).
+       * `random_state =`: effectively behaves as a seed to ensure reproducibility.
+   * During this process features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. How can you use the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">train_test_split()</a> function to do this?
+
+4. SVMs are sensitive to feature dominance because they rely on finding optimal lines/hyperplanes. Without scaling, features with larger values could disproportionately influence the model. Standardizing ensures all features contribute equally. How can you use <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">StandardScalar()</a> to scale the training and test data separately? In this step, simply initialize the StandardScalar.
+
+5. After initializing the scaler, how do we ensure that both training and test sets follow the same transformation? Look at `fit_transform()` and `transform()` in following <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">documentation</a>. Why should we apply `fit_transform()` to the training set but only `transform()` to the test set?
+    * Store the transformed training and test features in new variables (e.g. `X_scaled_train` and `X_scaled_test`). Feel free to choose other meaningful names.
+
+> [!IMPORTANT]
+> When completed, Insert a code block that combines the 3rd, 4th, and 5th step code. Above the code block add a header "Splitting Data into train and test sets & scaling and fitting the data", then comment out the instructions above.
+
+6. A linear kernel is useful when the data is linearly separable, meaning a straight-line decision boundary can effectively classify the data. You may also want to experiment with other kernels, such as 'rbf' or 'poly' to see how they impact performance.
+
 ```
-m = SVC(kernal = 'linear')
+m = SVC(kernel = 'linear')
 ```
-7. Now that we have a model, we can train the model using the following code:
+
+7. After defining our SVM model, the next step is to train it on the standardized training data. Training allows the model to learn patterns and relationships between the features `X_scaled_train` and the labels `y_train`. How could you use the `.fit()` function to do this? In this case, the `.fit()` function is allowing the model to learn the optimal decision boundary.
+
+8. After training, the model can be used to classify new data. The `.predict()` function allows us to generate predictions on our test dataset `X_scaled_test`. How could we ust the `.predict()` function and save it to a new variable named `y_pred`? Additionally, The `accuracy_score()` from the submodule `sklearn.metrics` function compares the model's predictions `y_pred` to the actual labels `y_test` to determine how well our model performs.
+
 ```
-m.fit(X_scaled_train, y_train)
+from sklearn.metrics import accuracy_score
+
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Model Accuracy: {accuracy:.2f}")
 ```
-8. Lastly, we are able to make predictions using the `predict()` function that we can call on the model and pass in the `X_scaled_test` as a parameter.
+
+> [!IMPORTANT]
+> Now, put everything together! Create a code block that initializes, trains, and tests the model. Above the code block, add the header 'Initializing, Training, and Testing the SVM', then comment out the instructions above.
+
+> Confusion Matrix, Potentially Logistic Regression
