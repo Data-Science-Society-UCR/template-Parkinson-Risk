@@ -75,17 +75,17 @@ import matplotlib.pyplot as plt
 ```
 3. We want to read the dataset using the `read_csv` function from the `pandas` library. The dataframe variable is generally `df`, which is what you will be using to call the functions below.
 4. Next we want to use the following functions for EDA:
-    * `info()` provides a quick summary of the info about the data frame.
-    * `head()` shows the first few rows of the dataset.
-    * `describe()` provides high-level summaries of all the columns in the dataset. Including count, mean, std, min, max, and 25%, 50%, and 75% percentiles of the values.
-    * `hist()` creates histograms for each column of the dataset. You can play around with the figure size, by passing `figsize=(x,y)` as a parameter.
-    * `isnull().sum()` provides a summary of the number of "missing values" for each of the columns. However, there is a caveat, you must look at the columns, and verify that a null value is NOT logical, thus it IS a missing value. There are multiple ways to address null values, which will be explored later.
-    * `df.duplicated().sum()` provides a summary of, if any duplicate rows. This is important because duplicates can skew data and affect model accuracy.
-    * `corr()` provides a data frame summary of the computed pairwise correlation of columns in the dataset. However, this can be intimidating and also hard to understand. Thus we can also visualize in a heatmap using the `seaborn` library.
+    * `.info()` provides a quick summary of the info about the data frame.
+    * `.head()` shows the first few rows of the dataset.
+    * `.describe()` provides high-level summaries of all the columns in the dataset. Including count, mean, std, min, max, and 25%, 50%, and 75% percentiles of the values.
+    * `.hist()` creates histograms for each column of the dataset. You can play around with the figure size, by passing `figsize=(x,y)` as a parameter.
+    * `.isnull().sum()` provides a summary of the number of "missing values" for each of the columns. However, there is a caveat, you must look at the columns, and verify that a null value is NOT logical, thus it IS a missing value. There are multiple ways to address null values, which will be explored later.
+    * `.duplicated().sum()` provides a summary of, if any duplicate rows. This is important because duplicates can skew data and affect model accuracy.
+    * `.corr()` provides a data frame summary of the computed pairwise correlation of columns in the dataset. However, this can be intimidating and also hard to understand. Thus we can also visualize in a heatmap using the `seaborn` library.
 5. Using the seaborn library create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code using `sns.heatmap()` function.
 
 > [!IMPORTANT]
-> When completed, Insert your findings, graphs, and observations here, then comment out the instructions above.
+> When completed, insert your findings, graphs, and observations here, then comment out the instructions above.
 
 ### 5. Support Vector Machine (SVM)
 
