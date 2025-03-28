@@ -5,6 +5,7 @@
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-%23ff69b4?style=for-the-badge)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas)
 ![Seaborn](https://img.shields.io/badge/Seaborn-Data%20Visualization-3776AB?style=for-the-badge)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E?style=for-the-badge)
 
 ## Project Overview
 
@@ -60,7 +61,7 @@ For this project, you will use the `parkinsons.data` dataset (Max A. Little, Pat
 
 ### 3. Libraries / Dependencies
 
-For this project, we will use the `pandas`, `numpy`, `matplotlib`, and `seaborn` libraries. If you haven't already, please install these libraries using pip/pip3 install.
+For this project, you will be using the `pandas`, `numpy`, `matplotlib`, `seaborn`, and `scikit-learn` libraries. If you haven't already, please install these libraries using pip/pip3 or conda install.
 
 ### 4. Exploratory Data Analysis (EDA)
 
