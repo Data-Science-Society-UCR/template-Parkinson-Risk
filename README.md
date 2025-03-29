@@ -1,6 +1,7 @@
 # template-Parkinson-Risk-Assessment
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
+![Jupyter Notebook](https://img.shields.io/badge/Jupyter%20Notebook-Interactive%20Computing-F37626?style=for-the-badge&logo=jupyter)
 ![NumPy](https://img.shields.io/badge/NumPy-1.21%2B-013243?style=for-the-badge&logo=numpy)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-%23ff69b4?style=for-the-badge)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas)
@@ -137,6 +138,9 @@ m = SVC(kernel = 'linear')
 
 7. After defining our SVM model, the next step is to train it on the standardized training data. Training allows the model to learn patterns and relationships between the features `X_scaled_train` and the labels `y_train`. How could you use the `.fit()` function to do this? In this case, the `.fit()` function is allowing the model to learn the optimal decision boundary.
 
+> [!IMPORTANT]
+> Now, put everything together! Create a code block that initializes, trains, and tests the model. Above the code block, add the header 'Initializing, Training, and Testing the SVM', then comment out the instructions above.
+
 8. After training, the model can be used to classify new data. The `.predict()` function allows us to generate predictions on our test dataset `X_scaled_test`. How could we ust the `.predict()` function and save it to a new variable named `y_pred`? Additionally, The `accuracy_score()` from the submodule `sklearn.metrics` function compares the model's predictions `y_pred` to the actual labels `y_test` to determine how well our model performs.
 
 ```
@@ -146,7 +150,6 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy:.2f}")
 ```
 
-> [!IMPORTANT]
-> Now, put everything together! Create a code block that initializes, trains, and tests the model. Above the code block, add the header 'Initializing, Training, and Testing the SVM', then comment out the instructions above.
+9. 
 
-> Confusion Matrix, Potentially Logistic Regression
+> Confusion Matrix Instructions
