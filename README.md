@@ -150,6 +150,17 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy:.2f}")
 ```
 
-9. 
+### 6. Confusion Matrix
 
-> Confusion Matrix Instructions
+1. Import the necessary submodule from `sklearn.metrics`:
+```
+from sklearn.metrics import confusion_matrix
+```
+2. Compute the confusion matrix: Use `confusion_matrix(y_pred, y_test)` function from `sklearn.metrics`.
+3. Visualize with Seaborn using `sns.heatmap()` to create a heatmap with labels, colors, and annotations. Two parameters you might need are:
+      * `annot=` is a boolean value for displayed values in the heatmap
+      * `cmap=` takes in a string of a color map to adjust the color map of the heatmap (e.g. `"Blues"`, `"coolwarm"`, `"BrBG"`, etc...).
+
+
+> [!IMPORTANT]
+> Now, the last step! Create a code block showing how you completed setp 8, with the header "SVM Accuracy". Additionally, include a photo of the Confusion Matrix, and a paragraph analysis of the Confusion Matrix. Lastly, comment out the instructions above.
