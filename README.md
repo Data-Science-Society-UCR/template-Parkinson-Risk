@@ -8,6 +8,10 @@
 ![Seaborn](https://img.shields.io/badge/Seaborn-Data%20Visualization-3776AB?style=for-the-badge)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E?style=for-the-badge)
 
+> Template created by: Henry Yost
+
+> Worked on by: <name>
+
 ## Project Overview
 
 This project's end goal is to assess Parkinson's disease risk using a simple machine learning mode, training on vocal biomarkers. We will analyze the dataset (`parkinsons.data`) to identify and train patterns that distinguish characteristics in individuals with Parkinson's disease from healthy individuals. 
@@ -60,11 +64,11 @@ For this project, you will use the `parkinsons.data` dataset (Max A. Little, Pat
 - DFA - Signal fractal scaling exponent
 - spread1,spread2,PPE - Three nonlinear measures of fundamental frequency variation
 
-### 3. Libraries / Dependencies
+### 2. Libraries / Dependencies
 
 For this project, you will be using the `pandas`, `numpy`, `matplotlib`, `seaborn`, and `scikit-learn` libraries. If you haven't already, please install these libraries using pip/pip3 or conda install.
 
-### 4. Exploratory Data Analysis (EDA)
+### 3. Exploratory Data Analysis (EDA)
 
 The first look at your data. During this EDA process, you are trying to understand the data's characteristics, identify patterns, and uncover potential insights by examining its structure, relationships, and anomalies.
 
@@ -88,7 +92,7 @@ import matplotlib.pyplot as plt
 > [!IMPORTANT]
 > When completed, insert your findings, graphs, and observations here, then comment out the instructions above.
 
-### 5. Support Vector Machine (SVM)
+### 4. Support Vector Machine (SVM)
 
 A Support Vector Machine (SVM) is a supervised machine learning algorithm that classifies data by identifying the optimal hyperplane that maximizes the margin between different classes in an N-dimensional space. For the Machine Learning model, use an SVM. To explore more about SVM and its applications, check out this <a href="https://www.ibm.com/think/topics/support-vector-machine#:~:text=A%20support%20vector%20machine%20(SVM,the%201990s%20by%20Vladimir%20N.">resource</a>.
 
@@ -150,7 +154,7 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy:.2f}")
 ```
 
-### 6. Confusion Matrix
+### 5. Confusion Matrix
 
 1. Import the necessary submodule from `sklearn.metrics`:
 ```
