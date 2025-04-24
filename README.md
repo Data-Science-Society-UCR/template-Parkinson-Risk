@@ -73,7 +73,7 @@ For this project, you will be using the `pandas`, `numpy`, `matplotlib`, `seabor
 The first look at your data. During this EDA process, you are trying to understand the data's characteristics, identify patterns, and uncover potential insights by examining its structure, relationships, and anomalies.
 
 1. The first step, will be to import all the libraries previously mentioned.
-```
+```python
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -97,7 +97,7 @@ import matplotlib.pyplot as plt
 A Support Vector Machine (SVM) is a supervised machine learning algorithm that classifies data by identifying the optimal hyperplane that maximizes the margin between different classes in an N-dimensional space. For the Machine Learning model, use an SVM. To explore more about SVM and its applications, check out this <a href="https://www.ibm.com/think/topics/support-vector-machine#:~:text=A%20support%20vector%20machine%20(SVM,the%201990s%20by%20Vladimir%20N.">resource</a>.
 
 Before getting started, import the necessary libraries for splitting data, normalizing features, and training a Support Vector Machine (SVM) model."
-```
+```python
 from sklearn.model_selection import train_test_split # Divides the dataset into training and test sets
 from sklearn.preprocessing import StandardScaler # Standardizes numerical features to have a mean of 0 and an SD of 1.
 from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
@@ -136,7 +136,7 @@ Once you've identified the necessary features, write the code to drop irrelevant
 
 6. A linear kernel is useful when the data is linearly separable, meaning a straight-line decision boundary can effectively classify the data. You may also want to experiment with other kernels, such as 'rbf' or 'poly' to see how they impact performance.
 
-```
+```python
 m = SVC(kernel = 'linear')
 ```
 
@@ -147,7 +147,7 @@ m = SVC(kernel = 'linear')
 
 8. After training, the model can be used to classify new data. The `.predict()` function allows us to generate predictions on our test dataset `X_scaled_test`. How could we ust the `.predict()` function and save it to a new variable named `y_pred`? Additionally, The `accuracy_score()` from the submodule `sklearn.metrics` function compares the model's predictions `y_pred` to the actual labels `y_test` to determine how well our model performs.
 
-```
+```python
 from sklearn.metrics import accuracy_score
 
 accuracy = accuracy_score(y_test, y_pred)
@@ -157,7 +157,7 @@ print(f"Model Accuracy: {accuracy:.2f}")
 ### 5. Confusion Matrix
 
 1. Import the necessary submodule from `sklearn.metrics`:
-```
+```python
 from sklearn.metrics import confusion_matrix
 ```
 2. Compute the confusion matrix: Use `confusion_matrix(y_pred, y_test)` function from `sklearn.metrics`.
