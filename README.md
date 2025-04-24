@@ -14,32 +14,32 @@
 
 ## Project Overview
 
-This project's end goal is to assess Parkinson's disease risk using a simple machine learning mode, training on vocal biomarkers. We will analyze the dataset (`parkinsons.data`) to identify and train patterns that distinguish characteristics in individuals with Parkinson's disease from healthy individuals. 
+This project's end goal is to assess Parkinson's disease risk using a simple machine learning model, training on vocal biomarkers. We will analyze the dataset (`parkinsons.data`) to identify and train patterns that distinguish characteristics in individuals with Parkinson's disease from healthy individuals. 
 
-## What is Parkinsons disease?
+## What is Parkinson's disease?
 
 Parkinson's disease was described by James Parkinson in 1817 as a "shaking palsy". Parkinson's disease is a neurodegenerative disorder of the brain that results in a loss of dopamine-producing neurons in the region called substantia nigra. Loss of this neurotransmitter dopamine causes neurons to fire randomly, leading to the symptoms of Parkinson's disease (listed below). Moreover, people with Parkinson's disease also lose norepinephrine, a chemical messenger that controls many of the body's functions.
 
 The exact cause of Parkinson's disease is not fully understood, however, there exist several factors that seem to influence the risk, including:
-- <b>Specific Genes</b>: Specific genetic changes are linked to Parkinson's disease, however, these are rare unless many family members have had Parkinson's disease.
-- <b>Environmental Factors</b>: Exposure to toxins and other environmental factors may increase the risk of Parkinson's disease. For example, <a href="https://en.wikipedia.org/wiki/MPTP">MPTP</a> a substance found in many illegal drugs is a neurotoxin that can cause Parkinson's disease-like symptoms. Other examples include pesticides and well water for drinking. It is important to note that no environmental factor has proven to be the cause.
+- <b>Specific Genes</b>: Specific genetic changes are linked to Parkinson's disease; however, these are rare unless many family members have had Parkinson's disease.
+- <b>Environmental Factors</b>: Exposure to toxins and other environmental factors may increase the risk of Parkinson's disease. For example, <a href="https://en.wikipedia.org/wiki/MPTP">MPTP</a>, a substance found in many illegal drugs, is a neurotoxin that can cause Parkinson's disease-like symptoms. Other examples include pesticides and well water for drinking. It is important to note that no environmental factor has proven to be the cause.
 
 Research on Parkinson's disease has shown that the brain undergoes significant changes. These changes include:
-- <b>Lewy bodies</b>: Clumps of proteins in the brain, namely Lewy bodies are associated with Parkinson's disease. Researchers believe these proteins hold an important clue to the cause.
-- <b>Alpha-synuclein within the Lewy bodies</b>: Alpha-synuclein is a protein found in all Lewy bodies. Moreover, interestingly, Alpha-synuclein proteins have been found in the spinal fluid of people who later got Parkinson's disease.
+- <b>Lewy bodies</b>: Clumps of proteins in the brain, namely Lewy bodies, are associated with Parkinson's disease. Researchers believe these proteins hold an important clue to the cause.
+- <b>Alpha-synuclein within the Lewy bodies</b>: Alpha-synuclein is a protein found in all Lewy bodies. Moreover, interestingly, Alpha-synuclein proteins have been found in the spinal fluid of people who later developed Parkinson's disease.
 - <b>Altered mitochondria</b>: Mitochondria are powerhouse factories inside cells that create a significant portion of the body's energy.  Changes in the mitochondria have been found in the brains of those with Parkinson's disease.
 
 ## Symptoms
 
 Parkinson's symptoms may include the following:
-- <b>Tremor</b>: A tremble shaking usually begins in the hands or fingers. Additionally, the tremor can begin in the foot or jaw.
+- <b>Tremor</b>: A tremor shaking usually begins in the hands or fingers. Additionally, the tremor can begin in the foot or jaw.
 - <b>Slowed movement (Bradykinesia)</b>: Parkinson's disease can slow your movement, making simple tasks significantly more difficult.
 - <b>Rigid Muscles</b>: Muscles may feel tense and painful, and arm movements may be short and jerky.
 - <b>Poor Posture and Balance</b>: Posture may begin to sink, and may have balance problems.
 - <b>Loss of automatic movements</b>: Difficulty performing movements that are traditionally done automatically, such as blinking, smiling, etc...
 - <b>Writing Changes</b>: Difficulty writing, and the writing may appear cramped and small.
 - <b>Nonmotor symptoms</b>: These symptoms could include depression, anxiety, sleep problems, difficulty smelling, and problems with thinking and memory.
-- <b>Voice changes</b>: Parkinson's disease can affect one voice, including a quieter voice, hoarseness, and slurred speech (What we will be looking at).
+- <b>Voice changes</b>: Parkinson's disease can affect one's voice, including a quieter voice, hoarseness, and slurred speech (What we will be looking at).
 
 ## Resources
 
@@ -70,24 +70,24 @@ For this project, you will be using the `pandas`, `numpy`, `matplotlib`, `seabor
 
 ### 3. Exploratory Data Analysis (EDA)
 
-The first look at your data. During this EDA process, you are trying to understand the data's characteristics, identify patterns, and uncover potential insights by examining its structure, relationships, and anomalies.
+First, look at your data. During this EDA process, you are trying to understand the data's characteristics, identify patterns, and uncover potential insights by examining its structure, relationships, and anomalies.
 
-1. The first step, will be to import all the libraries previously mentioned.
+1. The first step will be to import all the libraries previously mentioned.
 ```python
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 ```
 3. We want to read the dataset using the `read_csv` function from the `pandas` library. The dataframe variable is generally `df`, which is what you will be using to call the functions below.
-4. Next we want to use the following functions for EDA:
+4. Next, we want to use the following functions for EDA:
     * `.info()` provides a quick summary of the info about the data frame.
     * `.head()` shows the first few rows of the dataset.
     * `.describe()` provides high-level summaries of all the columns in the dataset. Including count, mean, std, min, max, and 25%, 50%, and 75% percentiles of the values.
-    * `.hist()` creates histograms for each column of the dataset. You can play around with the figure size, by passing `figsize=(x,y)` as a parameter.
-    * `.isnull().sum()` provides a summary of the number of "missing values" for each of the columns. However, there is a caveat, you must look at the columns, and verify that a null value is NOT logical, thus it IS a missing value. There are multiple ways to address null values, which will be explored later.
-    * `.duplicated().sum()` provides a summary of, if any duplicate rows. This is important because duplicates can skew data and affect model accuracy.
-    * `.corr()` provides a data frame summary of the computed pairwise correlation of columns in the dataset. However, this can be intimidating and also hard to understand. Thus we can also visualize in a heatmap using the `seaborn` library.
-5. Using the seaborn library create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code using `sns.heatmap()` function.
+    * `.hist()` creates histograms for each column of the dataset. You can play around with the figure size by passing `figsize=(x,y)` as a parameter.
+    * `.isnull().sum()` provides a summary of the number of "missing values" for each of the columns. However, there is a caveat: you must look at the columns and verify that a null value is NOT logical, thus it IS a missing value. There are multiple ways to address null values, which will be explored later.
+    * `.duplicated().sum()` provides a summary of whether any duplicate rows exist. This is important because duplicates can skew data and affect model accuracy.
+    * `.corr()` provides a data frame summary of the computed pairwise correlation of columns in the dataset. However, this can be intimidating and also hard to understand. Thus, we can also visualize in a heatmap using the `seaborn` library.
+5. Using the seaborn library, create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code using `sns.heatmap()` function.
 
 > [!IMPORTANT]
 > When completed, insert your findings, graphs, and observations here, then comment out the instructions above.
@@ -102,7 +102,7 @@ from sklearn.model_selection import train_test_split # Divides the dataset into 
 from sklearn.preprocessing import StandardScaler # Standardizes numerical features to have a mean of 0 and an SD of 1.
 from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
 ```
-1. The first step is to drop any rows with missing values. To do this we can use the `dropna()` function calling on the `df` variable that was created in the EDA. However, as we previously saw in the EDA, there are no missing values (It is good practice to drop null values though).
+1. The first step is to drop any rows with missing values. To do this, we can use the `dropna()` function calling on the `df` variable that was created in the EDA. However, as we previously saw in the EDA, there are no missing values (It is good practice to drop null values).
 
 2. The next step is to extract features and target variables.
    * Create a new data frame containing only the features relevant to predicting Parkinson’s. How can you ensure it excludes unnecessary columns?
@@ -115,7 +115,7 @@ from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
 Once you've identified the necessary features, write the code to drop irrelevant columns and define `X` and `y`. Before moving forward, check with your PD to confirm your choices.
 
 > [!IMPORTANT]
-> When completed, Insert a code block that combines the 1st and 2nd step code. Above the code block add a header "Dropping rows with missing values & Extract features and target variables", then comment out the instructions above.
+> When completed, insert a code block that combines the 1st and 2nd step code. Above the code block, add a header "Dropping rows with missing values & Extract features and target variables", then comment out the instructions above.
 
 3. To evaluate how well our model generalizes to unseen data, we need to split the dataset into training and testing sets, following the 80/20 rule. Meaning: 80% of the data will be used for training, and 20% for testing.
    * Use the train_test_split() function from sklearn.model_selection to randomly divide `X` (features) and `y` (labels).
@@ -124,7 +124,7 @@ Once you've identified the necessary features, write the code to drop irrelevant
        * `y` (labels): target variable.
        * `test_size =`: the proportion of the dataset that should be allocated to the test set (e.g. `0.3` for 30%).
        * `random_state =`: effectively behaves as a seed to ensure reproducibility.
-   * During this process features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. How can you use the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">train_test_split()</a> function to do this?
+   * During this process, features (`X`) and labels (`y`) must remain properly aligned after splitting. In other words, for every row in `X_train`, there is a corresponding label in `y_train` that indicates whether that person has Parkinson's or not. How can you use the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">train_test_split()</a> function to do this?
 
 4. SVMs are sensitive to feature dominance because they rely on finding optimal lines/hyperplanes. Without scaling, features with larger values could disproportionately influence the model. Standardizing ensures all features contribute equally. How can you use <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">StandardScalar()</a> to scale the training and test data separately? In this step, simply initialize the StandardScalar.
 
@@ -132,9 +132,9 @@ Once you've identified the necessary features, write the code to drop irrelevant
     * Store the transformed training and test features in new variables (e.g. `X_scaled_train` and `X_scaled_test`). Feel free to choose other meaningful names.
 
 > [!IMPORTANT]
-> When completed, Insert a code block that combines the 3rd, 4th, and 5th step code. Above the code block add a header "Splitting Data into train and test sets & scaling and fitting the data", then comment out the instructions above.
+> When completed, insert a code block that combines the 3rd, 4th, and 5th step code. Above the code block, add a header "Splitting Data into train and test sets & scaling and fitting the data", then comment out the instructions above.
 
-6. A linear kernel is useful when the data is linearly separable, meaning a straight-line decision boundary can effectively classify the data. You may also want to experiment with other kernels, such as 'rbf' or 'poly' to see how they impact performance.
+6. A linear kernel is useful when the data is linearly separable, meaning a straight-line decision boundary can effectively classify the data. You may also want to experiment with other kernels, such as 'rbf' or 'poly', to see how they impact performance.
 
 ```python
 m = SVC(kernel = 'linear')
@@ -167,4 +167,4 @@ from sklearn.metrics import confusion_matrix
 
 
 > [!IMPORTANT]
-> Now, the last step! Create a code block showing how you completed setp 8, with the header "SVM Accuracy". Additionally, include a photo of the Confusion Matrix, and a paragraph analysis of the Confusion Matrix. Lastly, comment out the instructions above.
+> Now, the last step! Create a code block showing how you completed step 8, with the header "SVM Accuracy". Additionally, include a photo of the Confusion Matrix and a paragraph analysis of the Confusion Matrix. Lastly, comment out the instructions above.
