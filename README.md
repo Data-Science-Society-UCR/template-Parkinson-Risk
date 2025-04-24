@@ -8,7 +8,7 @@
 ![Seaborn](https://img.shields.io/badge/Seaborn-Data%20Visualization-3776AB?style=for-the-badge)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E?style=for-the-badge)
 
-> Template created by: Henry Yost
+> Project template created by: Henry Yost
 
 > Worked on by: <name>
 
