@@ -43,7 +43,7 @@ import matplotlib.pyplot as plt
 5. Using the seaborn library, create a heatmap showing the pairwise correlation of all the columns in the dataset. **Hint:** This should be 3-4 lines of code using `sns.heatmap()` function.
 
 > [!IMPORTANT]
-> When completed, insert your findings, graphs, and observations here, then comment out the instructions above.
+> When completed, insert your findings, graphs, and observations in the `README.md` EDA section.
 
 ### 4. Support Vector Machine (SVM)
 
@@ -68,7 +68,7 @@ from sklearn.svm import SVC  # Imports Support # Init a SVM for classification
 Once you've identified the necessary features, write the code to drop irrelevant columns and define `X` and `y`. Before moving forward, check with your PD to confirm your choices.
 
 > [!IMPORTANT]
-> When completed, insert a code block that combines the 1st and 2nd step code. Above the code block, add a header "Dropping rows with missing values & Extract features and target variables", then comment out the instructions above.
+> When completed, insert a code block in the "Support Vector Machine (SVM) section in the `README.md` that combines the 1st and 2nd step code. Above the code block, add a header "Dropping rows with missing values & Extract features and target variables".
 
 3. To evaluate how well our model generalizes to unseen data, we need to split the dataset into training and testing sets, following the 80/20 rule. Meaning: 80% of the data will be used for training, and 20% for testing.
    * Use the train_test_split() function from sklearn.model_selection to randomly divide `X` (features) and `y` (labels).
@@ -85,7 +85,7 @@ Once you've identified the necessary features, write the code to drop irrelevant
     * Store the transformed training and test features in new variables (e.g. `X_scaled_train` and `X_scaled_test`). Feel free to choose other meaningful names.
 
 > [!IMPORTANT]
-> When completed, insert a code block that combines the 3rd, 4th, and 5th step code. Above the code block, add a header "Splitting Data into train and test sets & scaling and fitting the data", then comment out the instructions above.
+> When completed, insert a code block in the "Support Vector Machine (SVM) section in the `README.md` that combines the 3rd, 4th, and 5th step code. Above the code block, add a header "Splitting Data into train and test sets & scaling and fitting the data".
 
 6. A linear kernel is useful when the data is linearly separable, meaning a straight-line decision boundary can effectively classify the data. You may also want to experiment with other kernels, such as 'rbf' or 'poly', to see how they impact performance.
 
@@ -96,7 +96,7 @@ m = SVC(kernel = 'linear')
 7. After defining our SVM model, the next step is to train it on the standardized training data. Training allows the model to learn patterns and relationships between the features `X_scaled_train` and the labels `y_train`. How could you use the `.fit()` function to do this? In this case, the `.fit()` function is allowing the model to learn the optimal decision boundary.
 
 > [!IMPORTANT]
-> Now, put everything together! Create a code block that initializes, trains, and tests the model. Above the code block, add the header 'Initializing, Training, and Testing the SVM', then comment out the instructions above.
+> Now, put everything together! Create a code block that initializes, trains, and tests the model in the "Support Vector Machine (SVM) section in the `README.md`. Above the code block, add the header 'Initializing, Training, and Testing the SVM'.
 
 8. After training, the model can be used to classify new data. The `.predict()` function allows us to generate predictions on our test dataset `X_scaled_test`. How could we ust the `.predict()` function and save it to a new variable named `y_pred`? Additionally, The `accuracy_score()` from the submodule `sklearn.metrics` function compares the model's predictions `y_pred` to the actual labels `y_test` to determine how well our model performs.
 
@@ -120,4 +120,4 @@ from sklearn.metrics import confusion_matrix
 
 
 > [!IMPORTANT]
-> Now, the last step! Create a code block showing how you completed step 8, with the header "SVM Accuracy". Additionally, include a photo of the Confusion Matrix and a paragraph analysis of the Confusion Matrix. Lastly, comment out the instructions above.
+> Now, the last step! Create a code block showing how you completed step 8, in the "Model (SVM) Accuracy" in the `README.md`. Additionally, include a photo of the Confusion Matrix and a paragraph analysis of the Confusion Matrix.
